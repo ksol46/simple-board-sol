@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<title>Simple-Board</title>
+<link th:href="@{/Main.css}" rel="stylesheet" />
+</head>
+<body>
+	<div class="wrap">
+		<table border="1">
+			<thead>
+				<tr>
+					<th>글번호</th>
+					<th>글제목</th>
+					<th>글쓴이</th>
+					<th>작성날짜</th>
+				</tr>
+			</thead>
+			<tbody>		<!-- isEmpty : 리스트가 비어있는지 확인함. -->
+				<tr th:if="${boardList.isEmpty}" class="post-empty">
+					<td colspan="5">
+					게시글 없음
+					</td>
+				</tr>
+											<!-- 사용할 이름을 지정하고 비교함.  -->
+				<tr class="post-cell" th:each="p : ${boardList}">
+					<td class="post-cell__idx" th:text="${p.id}"></td>
+					<td class="post-cell__title"><a th:href="@{/view(id=${p.id})}" th:text="${p.title}" ></a></td>
+					<td class="post-cell__content" th:text="${p.name}"></td>
+					<td class="post-cell__regdate" th:text="${p.regDate}"></td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="5">
+						<a class="add-post" th:href="@{/add}">글쓰기</a>
+					</td>
+				</tr>
+			</tfoot>
+		</table>
+	</div>
+</body>
+</html>

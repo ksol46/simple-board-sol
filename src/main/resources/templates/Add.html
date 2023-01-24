@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link th:href="@{/add.css}" rel="stylesheet" />
+</head>
+<body>
+	<form th:action="@{/insert}" method="post">
+		<p>
+			<label for="b_title">글제목</label>
+			<input id="b_title" type="text" name="b_title" required autofocus/>
+		</p>
+		<p>
+		<label for="b_name" >글쓴이</label>
+		<input id="b_name" type="text" name="b_name" required/>
+		</p>
+		<p>
+			<label for="b_content">글내용</label>
+			<textarea id="b_content" type="text" name="b_content" required></textarea>
+		</p>
+		<p>
+			<button type="submit">Submit</button>
+		</p>
+	</form>
+</body>
+</html>

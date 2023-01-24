@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.wrap {
+	margin: 0 auto;
+	width: 90%;
+	max-width: 1200px;
+}
+
+table {
+	margin: 80px 0;
+	width: 100%;
+	border-collapse: collapse;
+}
+
+th {
+	padding: 4px;
+	box-sizing: border-box;
+}
+
+td {
+	padding: 8px;
+	box-sizing: border-box;
+}
+
+.add-post {
+	float: right;
+	padding: 8px 16px;
+}
+
+.post-empty {
+	text-align: center;
+	font-weigth: bold;
+	font-size: 20px;
+	line-height: 40px;
+}
